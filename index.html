@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+				<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js" ></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>		
+		<style>
+
+
+
+		</style>
+	</head>
+	<body>
+		
+		<a onclick="openDialog1()" data-target="#myModal">打开</a>
+		<a data-toggle="modal" data-target="#myModal1">打开1</a>
+		
+		<a href="#" onclick="openDialog1()">openDialog1</a>
+		
+		<a href="#" onclick="openDialog2()">openDialog2</a>
+		
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+		    <div class="modal-dialog">
+		        <div class="modal-content" >
+		          <iframe id="iframe1" src="dialog1.html" style="height: 400px;""></iframe>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+		
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+		    <div class="modal-dialog">
+		        <div class="modal-content"  style="overflow: hidden;">
+		          <iframe src="dialog2.html"></iframe>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+		
+	<script>
+		
+		var jsonStr ={};
+		var global = {};
+		function openDialog1(){
+			
+				$("#myModal").modal({  
+  					
+				});
+				sessionStorage.setItem('dialog1', {title: 1, name: 2})
+				
+				$('#iframe1 input[name=title]').val('TETSTSTS')
+
+			}
+		
+			function openDialog2(){
+			
+				$("#myModal").modal({  
+  				remote: "dialog2.html" 
+			});
+		}
+		function updateDialog1(option1) {
+			
+		}
+	</script>
+	</body>
+</html>
+ 
+
